@@ -4,6 +4,7 @@
   --bg-color: #f9fafb;
   --card-bg: #ffffff;
   --accent-color: #1d4ed8;
+  --border-color: #e5e7eb;
   --spacing: 1.5rem;
 }
 
@@ -21,14 +22,22 @@ body {
   padding: var(--spacing);
 }
 
-h1, h2, h3 {
-  margin-bottom: 0.75rem;
-  color: #111827;
-}
-
 main {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
 }
 
 nav ul {
@@ -37,13 +46,15 @@ nav ul {
   gap: 1.5rem;
   padding: 1rem 0;
   margin-bottom: 2rem;
-  border-bottom: 2rem solid #e5e7eb;
+  border-bottom: 2px solid var(--border-color);
 }
 
 nav a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .projects-grid {
@@ -55,11 +66,19 @@ nav a {
 
 .project-card {
   background: var(--card-bg);
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.25rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 .project-card:hover {
@@ -77,13 +96,26 @@ a:focus, button:focus {
   outline-offset: 2px;
 }
 
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   body {
     padding: 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
   }
 }
